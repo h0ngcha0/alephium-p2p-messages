@@ -150,7 +150,7 @@ class WebSocketClient extends EventEmitter {
   connect() {
     if (this.isConnected || this.isPaused) return;
 
-    this.ws = new WebSocket('ws://127.0.0.1:11973/events');
+    this.ws = new WebSocket('wss://alephium-d13e6g.alephium.org/events');
 
     this.ws.onopen = () => {
       this.isConnected = true;
