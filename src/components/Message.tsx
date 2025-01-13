@@ -71,6 +71,12 @@ const MessageBubble = styled.div<StyledProps>`
   border: 1px solid ${props => props.getColorForIp(props.ip)};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   will-change: transform, opacity;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    padding: 8px;
+    font-size: 12px;
+  }
 `;
 
 const MessageType = styled.div<StyledProps>`

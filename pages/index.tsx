@@ -15,6 +15,14 @@ const AppContainer = styled.div`
   padding: 16px;
   background-color: #121212;
   box-sizing: border-box;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 60px 1fr 70px;
+    padding: 8px;
+    gap: 8px;
+  }
 `;
 
 const AppTitle = styled.div`
@@ -27,8 +35,14 @@ const AppTitle = styled.div`
 
 const SenderContainer = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: 0 8px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    height: 60px;
+  }
 `;
 
 const ChatContainer = styled.div`
@@ -41,6 +55,10 @@ const ChatContainer = styled.div`
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border: 1px solid #333333;
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
 
   /* Add background logo */
   &::before {
@@ -75,7 +93,11 @@ const ChatContainer = styled.div`
     background-size: contain;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.15;  // Increased from 0.1 to 0.15
+    opacity: 0.15;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 60vh;
   }
 `;
 
@@ -124,22 +146,27 @@ const ReceiversContainer = styled.div`
   padding: 0 8px;
   overflow-y: auto;
   max-height: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 4px 0;
+    height: 70px;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Scrollbar styling */
   scrollbar-width: thin;
   scrollbar-color: #2D2D2D #121212;
 
   &::-webkit-scrollbar {
-    width: 10px;
-    background: #121212;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: #121212;
-    border-radius: 4px;
+    width: 8px;
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
     background: #2D2D2D;
-    border: 2px solid #121212;
     border-radius: 10px;
 
     &:hover {
@@ -167,6 +194,10 @@ const MainTitle = styled.h1`
   margin: 0;
   padding: 0;
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Subtitle = styled.div`
@@ -174,6 +205,10 @@ const Subtitle = styled.div`
   color: #808080;
   margin-top: 5px;
   letter-spacing: 0.5px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const PauseButtonContainer = styled.div`
